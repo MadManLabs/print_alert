@@ -21,8 +21,8 @@ PrintAlert is an incident management system for printers in your company.
 
 1. Clone the repository
 2. Navigate to the directory
-3. Run ```composer install```
-4. Create the ".env" file and setup your database connection strings
+3. Run ```composer install``` (<a href="https://getcomposer.org">Composer</a> is required)
+4. Rename the ".env.example" file to ".env" and setup your database & mail settings
 5. Run ```php artisan key:generate```
 6. Run ```php artisan migrate```
 7. Set the webroot of your webserver to the "public" folder
