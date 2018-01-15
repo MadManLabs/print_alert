@@ -1,0 +1,544 @@
+body {
+    background: #F2F2F2;
+    color: rgba(0, 0, 0, 0.6);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::-moz-selection {
+    background: #1E88E5;
+}
+
+::selection {
+    background: #1E88E5;
+}
+
+.modal {  z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.content-modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80%;
+    background: #FFF;
+    max-width: 600px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: auto auto;
+    padding: 60px;
+    overflow: auto;
+}
+
+.header {
+    margin: 0 0 40px;
+    color: #1E88E5;
+    text-align: center;
+}
+.header h1 {
+    margin: 0 0 10px;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 30px;
+    font-weight: 600;
+}
+.header span {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.thumbnail img {
+    display: block;
+    width: 100%;
+}
+
+.description {
+    width: 100%;
+}
+.description h2 {
+    display: block;
+    margin: 0 0 10px;
+    color: #1E88E5;
+    font-size: 18px;
+}
+.description .meta {
+    margin: 0 0 10px;
+    color: #E1E1E1;
+    font-size: 12px;
+}
+.description .location {
+    margin: 0 10px 0 0;
+    color: #9A9A9A;
+}
+.description .website {
+    color: #343434;
+    text-decoration: none;
+}
+
+.dribbble, .dribbble:before, .dribbble:after, .dribbble span {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #DEDEDE;
+    border-radius: 100%;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+.dribbble:before, .dribbble:after, .dribbble span, .dribbble:before span {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    display: block;
+}
+.dribbble:after {
+    right: -100px;
+    bottom: -100px;
+}
+.dribbble span, .dribbble:before span, .dribbble:after span {
+    top: -100px;
+    left: -100px;
+    height: 30px;
+}
+.dribbble.selected, .selected.dribbble:before, .selected.dribbble:after, .dribbble span.selected {
+    border-color: #1E88E5;
+}
+.dribbble.selected:before, .selected.dribbble:after, .dribbble span.selected, .dribbble:before span.selected {
+    top: -14px;
+    left: -6px;
+}
+.dribbble.selected:after {
+    top: auto;
+    right: -6px;
+    bottom: -14px;
+    left: auto;
+}
+.dribbble.selected span, .selected.dribbble:before span, .selected.dribbble:after span, .dribbble span.selected span {
+    top: -5px;
+    left: -11px;
+    height: 50px;
+    border-color: #1E88E5;
+}
+.footer .dribbble, .footer .dribbble:before, .footer .dribbble:after, .footer .dribbble span, .dribbble .footer span {
+    border-color: #FFF !important;
+}
+.footer .dribbble span, .footer .dribbble:before span, .footer .dribbble:after span, .dribbble .footer span span {
+    border-color: #FFF !important;
+}
+
+.footer {
+    margin: 20px 0 0;
+}
+.footer input {
+    width: 100%;
+    border: 1px solid #DEDEDE;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 0 20px;
+    padding: 20px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: inherit;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+.footer input:focus {
+    border-color: #1E88E5;
+}
+.footer button {
+    outline: none;
+    position: relative;
+    background: #1E88E5;
+    width: 100%;
+    border: 0;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 20px;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.footer button.success {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #1E88E5;
+    -webkit-transform: translate(-50%, -50%) scale(100);
+    transform: translate(-50%, -50%) scale(100);
+    -webkit-animation: successContainer 10s ease;
+    animation: successContainer 10s ease;
+}
+.footer button .dribbble, .footer button .dribbble:before, .footer button .dribbble:after, .footer button .dribbble span, .dribbble .footer button span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-indent: -9999px;
+    -webkit-animation: dribbble 10s ease;
+    animation: dribbble 10s ease;
+    opacity: 0;
+}
+.footer button .dribbble:before, .footer button .dribbble:after, .footer button .dribbble span, .dribbble .footer button span, .footer button .dribbble:before span, .dribbble:before .footer button span {
+    top: -14px !important;
+    left: -6px !important;
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
+    -webkit-animation: none;
+    animation: none;
+    opacity: 1;
+}
+.footer button .dribbble:after {
+    top: auto !important;
+    right: -6px !important;
+    bottom: -14px !important;
+    left: auto !important;
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
+    -webkit-animation: none;
+    animation: none;
+    opacity: 1;
+}
+.footer button .dribbble span, .footer button .dribbble:before span, .footer button .dribbble:after span, .dribbble .footer button span span {
+    top: -5px !important;
+    left: -11px !important;
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
+    -webkit-animation: none;
+    animation: none;
+    opacity: 1;
+}
+
+.message {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    padding: 60px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    -webkit-animation: message 10s ease;
+    animation: message 10s ease;
+}
+.message .dribbble, .message .dribbble:before, .message .dribbble:after, .message .dribbble span, .dribbble .message span {
+    position: relative;
+    margin: 0 auto 160px;
+    border-color: #FFF;
+    -webkit-transform: scale(6);
+    transform: scale(6);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+}
+.message .dribbble:before, .message .dribbble:after, .message .dribbble span, .dribbble .message span, .message .dribbble:before span, .dribbble:before .message span, .message .dribbble:after,
+.message .dribbble span,
+.message .dribbble:before span,
+.message .dribbble:after span,
+.dribbble .message span span {
+    margin: 0;
+    position: absolute;
+    border-color: #FFF;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.message h1 {
+    margin: 0 0 10px;
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 600;
+    -webkit-animation: messageH1 10s ease;
+    animation: messageH1 10s ease;
+}
+.message span {
+    color: #FFF;
+    -webkit-animation: messageSpan 10s ease;
+    animation: messageSpan 10s ease;
+}
+.message span a {
+    color: #FFF;
+}
+
+.closeModal{
+
+}
+
+@-webkit-keyframes message {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    30% {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes message {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    30% {
+        top: 50%;
+        opacity: 1;
+    }
+}
+@-webkit-keyframes dribbble {
+    0% {
+        opacity: 0;
+    }
+    4% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    19% {
+        opacity: 1;
+    }
+    20% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: translate(-50%, -50%) rotate(720deg);
+        transform: translate(-50%, -50%) rotate(720deg);
+        opacity: 0;
+    }
+}
+@keyframes dribbble {
+    0% {
+        opacity: 0;
+    }
+    4% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    19% {
+        opacity: 1;
+    }
+    20% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: translate(-50%, -50%) rotate(720deg);
+        transform: translate(-50%, -50%) rotate(720deg);
+        opacity: 0;
+    }
+}
+@-webkit-keyframes successContainer {
+    0% {
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 60px;
+        color: #1E88E5;
+        margin: 0 auto;
+        padding: 0;
+        border-radius: 4px;
+        -webkit-transform: translate(0%, 0%) scale(1);
+        transform: translate(0%, 0%) scale(1);
+        overflow: hidden;
+    }
+    5% {
+        width: 60px;
+        border-radius: 100px;
+    }
+    10% {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        border-radius: 100px;
+        color: #1E88E5;
+        -webkit-transform: translate(0%, 0%) scale(1);
+        transform: translate(0%, 0%) scale(1);
+    }
+    20% {
+        width: 60px;
+        height: 60px;
+        top: 0;
+        left: 0;
+        border-radius: 100%;
+        margin: 0 auto;
+        padding: 0;
+        -webkit-transform: translate(0%, 0%) scale(1);
+        transform: translate(0%, 0%) scale(1);
+    }
+    40% {
+        -webkit-transform: translate(-50%, -50%) scale(100);
+        transform: translate(-50%, -50%) scale(100);
+    }
+}
+@keyframes successContainer {
+    0% {
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 60px;
+        color: #1E88E5;
+        margin: 0 auto;
+        padding: 0;
+        border-radius: 4px;
+        -webkit-transform: translate(0%, 0%) scale(1);
+        transform: translate(0%, 0%) scale(1);
+        overflow: hidden;
+    }
+    5% {
+        width: 60px;
+        border-radius: 100px;
+    }
+    10% {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        border-radius: 100px;
+        color: #1E88E5;
+        -webkit-transform: translate(0%, 0%) scale(1);
+        transform: translate(0%, 0%) scale(1);
+    }
+    20% {
+        width: 60px;
+        height: 60px;
+        top: 0;
+        left: 0;
+        border-radius: 100%;
+        margin: 0 auto;
+        padding: 0;
+        -webkit-transform: translate(0%, 0%) scale(1);
+        transform: translate(0%, 0%) scale(1);
+    }
+    40% {
+        -webkit-transform: translate(-50%, -50%) scale(100);
+        transform: translate(-50%, -50%) scale(100);
+    }
+}
+@-webkit-keyframes slidingLeft {
+    0% {
+        left: 50%;
+        width: 0%;
+        opacity: 0;
+    }
+    5% {
+        left: 50%;
+        width: 0%;
+    }
+    20% {
+        width: 20%;
+        opacity: 1;
+    }
+    100% {
+        left: -100%;
+    }
+}
+@keyframes slidingLeft {
+    0% {
+        left: 50%;
+        width: 0%;
+        opacity: 0;
+    }
+    5% {
+        left: 50%;
+        width: 0%;
+    }
+    20% {
+        width: 20%;
+        opacity: 1;
+    }
+    100% {
+        left: -100%;
+    }
+}
+@-webkit-keyframes slidingRight {
+    0% {
+        right: 50%;
+        width: 0%;
+        opacity: 0;
+    }
+    5% {
+        right: 50%;
+        width: 0%;
+    }
+    20% {
+        width: 20%;
+        opacity: 1;
+    }
+    100% {
+        right: -100%;
+    }
+}
+@keyframes slidingRight {
+    0% {
+        right: 50%;
+        width: 0%;
+        opacity: 0;
+    }
+    5% {
+        right: 50%;
+        width: 0%;
+    }
+    20% {
+        width: 20%;
+        opacity: 1;
+    }
+    100% {
+        right: -100%;
+    }
+}
