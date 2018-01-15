@@ -1,5 +1,3 @@
-<p align="center"><img src="https://png.icons8.com/color/50/000000/print.png"></p>
-
 ## PrintAlert - Incident management system
 [![MIT](https://img.shields.io/cocoapods/l/AFNetworking.svg)](https://github.com/emilwallner/Screenshot-to-code-in-Keras/blob/master/LICENSE)
 
@@ -16,19 +14,18 @@ PrintAlert is an incident management system for printers in your company.
 - Add printers/devices and map the respective rooms
 - Customize user-defined alerts that you want to send
 - E-Mail notification for the chosen users
-- Beautiful and refreshing backgrounds from unsplash.com
+- Beautiful and refreshing backgrounds from <a href="https://unsplash.com">unsplash.com</a>
 
 
 ## Installation
 
 1. Clone the repository
 2. Navigate to the directory
-3. Run "composer install"
+3. Run ```composer install```
 4. Create the ".env" file and setup your database connection strings
-5. Run "php artisan key:generate"
-6. Run "php artisan migrate"
+5. Run ```php artisan key:generate```
+6. Run ```php artisan migrate```
 7. Set the webroot of your webserver to the "public" folder
-8. Complete
 
 ## License
 
