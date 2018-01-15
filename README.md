@@ -1,16 +1,23 @@
-## PrintAlert
+<p align="center"><img src="https://png.icons8.com/color/50/000000/print.png"></p>
 
-PrintAlert is an incident management system for printers in your company. (English translation is comming soon)
+## PrintAlert - Incident management system
+[![MIT](https://img.shields.io/cocoapods/l/AFNetworking.svg)](https://github.com/emilwallner/Screenshot-to-code-in-Keras/blob/master/LICENSE)
+
+PrintAlert is an incident management system for printers in your company. 
+
+## Demo (English translation is comming soon)
+
+![alt text](https://github.com/markushaug/print_alert/blob/master/demo.gif)
+
+## Features
 
 - Fast and easy-to-use
 - Multiple rooms/offices
 - Add printers/devices and map the respective rooms
-- Customize user-defined alerts that you want to send.
+- Customize user-defined alerts that you want to send
 - E-Mail notification for the chosen users
+- Beautiful and refreshing backgrounds from unsplash.com
 
-## Screenshots
-
-![alt text](https://github.com/markushaug/print_alert/blob/master/demo.gif)
 
 ## Installation
 
