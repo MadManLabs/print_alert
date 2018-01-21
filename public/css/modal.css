@@ -193,7 +193,7 @@ body {
     outline: none;
     position: relative;
     background: #1E88E5;
-    width: 100%;
+    width: 49%;
     border: 0;
     border-radius: 3px;
     -webkit-box-sizing: border-box;
@@ -205,6 +205,21 @@ body {
     text-transform: uppercase;
     cursor: pointer;
 }
+.delete {
+    padding: 2px;
+    background: red!important;
+}
+
+.flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+
 .footer button.success {
     position: absolute;
     top: 50%;

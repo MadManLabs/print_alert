@@ -13,6 +13,7 @@ return [
         'span' => 'Ihr Administrator wird benachrichtigt.',
         'inputPlacHolder' => 'Geben Sie hier eine optionale Fehlermeldung ein',
         'submit' => 'Störung einreichen',
+        'deleteIncident' => 'Störung entfernen',
         'close' => 'Schließen',
     ],
 

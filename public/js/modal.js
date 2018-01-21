@@ -34,22 +34,15 @@ $(".submit").on("click", function() {
 
     setTimeout(function () {
         location.reload();
-    }, 10000);
+    }, 3000);
 
 });
 
-var modalState = 1;
+var id = 0;
 
-$(document).click(function(event) {
-
-    if (!modalState == 1) {
-        hideModal();
-    }
-});
-
-
-
-function showModal() {
+function showModal(_id = 0) {
+    id = _id;
+    console.log(id);
     modalState = 0;
     $(".modal").show();
 }
@@ -63,6 +56,12 @@ function hideModal(){
     modalState = 0;
 }
 
+$('#modal').click(function(e) {
+    e.preventDefault();
+    //$('#modal, #alertModalOuter').fadeOut(400, function() {
+    //});
+});
+
 
 
 function increaseEvaluation(offset){
@@ -71,18 +70,41 @@ function increaseEvaluation(offset){
 }
 
 function submitIncident(){
+    $('#delButton').hide();
     var optionalText = $('#optionalText').val();
+    console.log(evaluation);
     // post
     $.ajax({
         method: "POST",
-        url: getAbsoulutUrl() + '/submit',
+        url: getAbsoulutUrl() + '/incident',
         data: {
             "_token": getCsrf(),
+            'id': id,
             'evaluation': evaluation,
             'optionalText': optionalText
         },
         success: function(data){
             console.log(data);
+        },
+        error: function(data){
+            console.log(data)
+        }
+    });
+}
+
+function deleteIncident(){
+    var optionalText = $('#optionalText').val();
+    // post
+    $.ajax({
+        method: "DELETE",
+        url: getAbsoulutUrl() + '/incident',
+        data: {
+            "_token": getCsrf(),
+            'id': id
+        },
+        success: function(data){
+            console.log(data);
+            location.reload();
         },
         error: function(data){
             console.log(data)

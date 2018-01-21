@@ -13,4 +13,5 @@
 
 
 Route::get('/', 'IndexController@index');
-Route::post('/submit', 'IndexController@submit');
+Route::post('/incident', 'IndexController@setFlag');
+Route::delete('/incident', 'IndexController@remFlag');

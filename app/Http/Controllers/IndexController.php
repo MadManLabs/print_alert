@@ -10,42 +10,69 @@ class IndexController extends Controller
     /**
      * @return mixed
      */
-    public function index(){
+    public function index()
+    {
 
         $devices = DB::table('devices')->get();
 
-        $messages = DB::table('incidents')->where('displayMessage','=',1)->get();
+        $messages = DB::table('incidents')->where('displayMessage', '=', 1)->get();
 
         $data = array(
-            'devices'  => $devices,
+            'devices' => $devices,
             'messages' => $messages
         );
 
         return \View::make('index')->with($data);
     }
 
-    public function submit(Request $request){
+    public function setFlag(Request $request)
+    {
         $validatedData = $request->validate([
             'evaluation' => 'required',
+            'id' => 'required|numeric',
             'optionalText' => 'max:255',
         ]);
 
-        if($validatedData===false){
+        if ($validatedData === false) {
             return response('Error', 500);
         }
 
         $optionalText = $request->input('optionalText');
 
+        DB::table('devices')
+            ->where('id', $request->input('id'))
+            ->update(['hasIncident' => 1]);
+
         /*
          * TODO:
          * - Email?
-         * - DB-Insert?
+         * - 
          * - Wünsche?
+         * - hue -> gruppe
          * - ...
          */
 
-        return response('',200);
+        return response('', 200);
+    }
 
+
+    public function remFlag(Request $request)
+    {
+        $validation = $request->validate(
+            [
+                'id' => 'required|numeric',
+            ]
+        );
+
+        if($validation === false){
+            return response('Error', 500);
+        }
+
+        DB::table('devices')
+            ->where('id', $request->input('id'))
+            ->update(['hasIncident' => 0]);
+
+        return response('', 200);
 
     }
 

@@ -114,10 +114,10 @@ body #AppArea #ListArea > li {
     }
     */
 }
-body #AppArea #ListArea > li[data-status="0"] .Bar .Status {
+body #AppArea #ListArea > li[data-status="1"] .Bar .Status {
     background-color: #e74c3c;
 }
-body #AppArea #ListArea > li[data-status="1"] .Bar .Status {
+body #AppArea #ListArea > li[data-status="0"] .Bar .Status {
     background-color: #2ecc71;
 }
 body #AppArea #ListArea > li .Text {
