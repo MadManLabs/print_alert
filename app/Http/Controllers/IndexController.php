@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\IncidentCreated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class IndexController extends Controller
 {
@@ -41,16 +43,30 @@ class IndexController extends Controller
 
         DB::table('devices')
             ->where('id', $request->input('id'))
-            ->update(['hasIncident' => 1]);
-
+            ->update(
+                ['hasIncident' => 1],
+                ['optionalText' => $optionalText]
+                );
         /*
          * TODO:
-         * - Email?
-         * - 
-         * - Wünsche?
          * - hue -> gruppe
          * - ...
          */
+        // Collect data for mail
+        $data = DB::table('devices')
+                ->where('id', $request->input('id'))
+                ->first();
+
+        $incidents[sizeof($request->evaluation)] = null;
+
+        for($i = 0; $i < sizeof($request->evaluation); $i++){
+            $incidents[sizeof($request->evaluation)] = DB::table('incidents')->where('id',$request->evaluation+1)->pluck('incidentDescription');
+        }
+        $data->incidents = $incidents;
+
+        Mail::to(env('MAIL_USERNAME'))
+            ->send(new IncidentCreated($data));
+
 
         return response('', 200);
     }

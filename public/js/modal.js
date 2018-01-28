@@ -65,8 +65,12 @@ $('#modal').click(function(e) {
 
 
 function increaseEvaluation(offset){
+    if(evaluation[offset-1] == 0){
     evaluation[offset-1] =  evaluation[offset-1] + 1;
-    console.log(evaluation[offset-1]);
+    } else{
+        evaluation[offset-1] =0;
+    }
+    console.log('offset: ' + offset + ' ' +evaluation[offset-1]);
 }
 
 function submitIncident(){
