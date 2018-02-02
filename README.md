@@ -1,5 +1,7 @@
 ## PrintAlert - Incident management system
-[![MIT](https://img.shields.io/cocoapods/l/AFNetworking.svg)](https://github.com/emilwallner/Screenshot-to-code-in-Keras/blob/master/LICENSE)
+[![MIT](https://img.shields.io/cocoapods/l/AFNetworking.svg)](https://github.com/markushaug/print_alert/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/markushaug/print_alert.svg?branch=master)](https://travis-ci.org/markushaug/print_alert)
+[![PHP7 Compatible](https://img.shields.io/badge/php-7-green.svg?style=flat-square)](https://packagist.org/packages/markushaug/print_alert)
 
 PrintAlert is an incident management system for printers in your company. 
 
