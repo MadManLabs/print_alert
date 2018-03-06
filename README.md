@@ -18,8 +18,7 @@
   </a>
 </p>
 
-<center>
-[![Dashboard](https://github.com/markushaug/print_alert/blob/master/demo.gif)](https://github.com/markushaug/print_alert)</center>
+[![Dashboard](https://github.com/markushaug/print_alert/blob/master/demo.gif)](https://github.com/markushaug/print_alert)
 
 ## Table of content
 
