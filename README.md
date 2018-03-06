@@ -18,7 +18,8 @@
   </a>
 </p>
 
-[![Dashboard](https://github.com/markushaug/print_alert/blob/master/demo.gif)](https://github.com/markushaug/homify)
+<center>
+[![Dashboard](https://github.com/markushaug/print_alert/blob/master/demo.gif)](https://github.com/markushaug/print_alert)</center>
 
 ## Table of content
 
@@ -51,7 +52,7 @@ To install and run this application, you'll need <a href="https://getcomposer.or
 
 ### Composer
 ```bash
-# Download & install Homify with its dependencies
+# Download & install PrintAlert with its dependencies
 $ composer create-project markushaug/print_alert
 $ composer update
 ```
@@ -67,8 +68,8 @@ $ php artisan db:seed
 
 ### Webserver
 - Set the webroot of your webserver to the ```public``` folder
-- Grant permissions to the homify folder. 
-  - If the application runs into an issue, try this command inside of the homify directory: ```chmod -R 777 storage```.
+- Grant permissions to the PrintAlert folder. 
+  - If the application runs into an issue, try this command inside of the PrintAlert directory: ```chmod -R 777 storage```.
 
 
 ## FAQ / CONTACT / TROUBLESHOOT
