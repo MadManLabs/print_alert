@@ -64,7 +64,7 @@ class IndexController extends Controller
         }
         $data->incidents = $incidents;
 
-        Mail::to(env('MAIL_USERNAME'))
+        Mail::to(env('MAIL_RECEIVER'))
             ->send(new IncidentCreated($data));
 
 
